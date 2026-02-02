@@ -4,15 +4,15 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h1>Dashboard</h1>
-                    <p>Welcome back! <a href="{{ route('reports.index') }}">View Reports</a></p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-lg mb-2">📊 Your Reports</h4>
+                    <p class="text-3xl font-bold text-blue-600">{{ Auth::user()->reports->count() }}</p>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-lg mb-2">🌟 Total Reports</h4>
+                    <p class="text-3xl font-bold text-green-600">{{ \App\Models\Report::count() }}</p>
                 </div>
             </div>
-        </div>
-    </div>
 </x-app-layout>

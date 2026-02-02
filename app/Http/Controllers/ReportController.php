@@ -51,6 +51,7 @@ class ReportController extends Controller
             ->with('success', 'Report created successfully!');
     }
 
+
     public function edit(Report $report)
     {
         if ($report->user_id !== Auth::id()) {

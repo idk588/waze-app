@@ -32,5 +32,23 @@
                 {{ $slot }}
             </main>
         </div>
+                <!-- Footer -->
+        <footer class="bg-gray-800 text-white mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="text-center">
+                    <p class="text-sm">© 2026 WazeApp - Traffic Reporting System for Malta</p>
+                    <p class="text-xs text-gray-400 mt-2">Built with Laravel & Google Maps | 
+                        <a href="{{ route('reports.index') }}" class="hover:underline">Reports</a> | 
+                        <a href="{{ route('directions') }}" class="hover:underline">Directions</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        @stack('scripts')
+    </body>
+</html>
+
+        @stack('scripts')
     </body>
 </html>

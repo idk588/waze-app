@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DirectionController;
+
 
 Route::get('/', [ReportController::class, 'index'])->name('reports.index');
 Route::get('/reports', [ReportController::class, 'index']);
@@ -16,6 +18,9 @@ Route::get('/reports/{report}', [ReportController::class, 'show'])->name('report
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/directions', [DirectionController::class, 'index'])->name('directions');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
