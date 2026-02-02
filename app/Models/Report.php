@@ -20,6 +20,16 @@ class Report extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+    public function confirmations()
+    {
+        return $this->hasMany(ReportConfirmation::class);
+    }
+
+    public function confirmationsCount()
+    {
+        return $this->confirmations()->where('is_helpful', true)->count();
+    }
 
     
 }

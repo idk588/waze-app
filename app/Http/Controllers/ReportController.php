@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ReportConfirmation;
+
 
 class ReportController extends Controller
 {
@@ -90,4 +92,25 @@ class ReportController extends Controller
         return redirect()->route('reports.index')
             ->with('success', 'Report deleted successfully!');
     }
+
+    public function confirm(Request $request, Report $report)
+    {
+    // Check if already confirmed
+    $existing = ReportConfirmation::where('report_id', $report->id)
+        ->where('user_id', Auth::id())
+        ->first();
+    
+    if ($existing) {
+        return redirect()->back()->with('error', 'You already confirmed this report.');
+    }
+    
+    ReportConfirmation::create([
+        'report_id' => $report->id,
+        'user_id' => Auth::id(),
+        'is_helpful' => $request->input('is_helpful', true),
+    ]);
+    
+    return redirect()->back()->with('success', 'Thanks for confirming!');
+}
+
 }

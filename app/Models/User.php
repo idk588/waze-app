@@ -38,6 +38,11 @@ class User extends Authenticatable
         return $this->hasMany(Report::class);
     }
 
+    public function confirmations()
+    {
+        return $this->hasMany(ReportConfirmation::class);
+    }
+
 
     /**
      * Get the attributes that should be cast.
