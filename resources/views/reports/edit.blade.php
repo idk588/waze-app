@@ -17,10 +17,10 @@
                         <div class="mb-4">
                             <label for="type" class="block text-sm font-medium text-gray-700">Report Type</label>
                             <select id="type" name="type" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
-                                <option value="accident" {{ $report->type == 'accident' ? 'selected' : '' }}>🚗 Accident</option>
-                                <option value="hazard" {{ $report->type == 'hazard' ? 'selected' : '' }}>⚠️ Hazard</option>
-                                <option value="police" {{ $report->type == 'police' ? 'selected' : '' }}>👮 Police</option>
-                                <option value="closure" {{ $report->type == 'closure' ? 'selected' : '' }}>🚧 Road Closure</option>
+                                <option value="accident" {{ $report->type == 'accident' ? 'selected' : '' }}> Accident</option>
+                                <option value="hazard" {{ $report->type == 'hazard' ? 'selected' : '' }}> Hazard</option>
+                                <option value="police" {{ $report->type == 'police' ? 'selected' : '' }}> Police</option>
+                                <option value="closure" {{ $report->type == 'closure' ? 'selected' : '' }}> Road Closure</option>
                             </select>
                             @error('type')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>

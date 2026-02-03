@@ -16,10 +16,10 @@
                         <div class="mb-4">
                             <label for="type" class="block text-sm font-medium text-gray-700">Report Type</label>
                             <select id="type" name="type" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
-                                <option value="accident">🚗 Accident</option>
-                                <option value="hazard">⚠️ Hazard</option>
-                                <option value="police">👮 Police</option>
-                                <option value="closure">🚧 Road Closure</option>
+                                <option value="accident">Accident</option>
+                                <option value="hazard">Hazard</option>
+                                <option value="police">Police</option>
+                                <option value="closure">Road Closure</option>
                             </select>
                             @error('type')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
